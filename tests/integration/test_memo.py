@@ -1,8 +1,8 @@
 """Tests for the Memo program."""
 import pytest
 
-from memo.constants import MEMO_PROGRAM
-from memo.memo_program import MemoParams, memo_instruction
+from spl.memo.constants import MEMO_PROGRAM
+from spl.memo.memo_program import MemoParams, memo_instruction
 from solana.keypair import Keypair
 from solana.rpc.api import Client
 from solana.rpc.commitment import Finalized

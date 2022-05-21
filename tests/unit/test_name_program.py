@@ -1,5 +1,5 @@
 """Unit tests for solana.system_program."""
-from name_service.name_program import (
+from spl.name_service.name_program import (
     CreateNameParams,
     DeleteNameParams,
     TransferNameParams,
@@ -13,7 +13,7 @@ from name_service.name_program import (
     transfer_name,
     update_name,
 )
-from name_service.utils import get_hashed_name, get_name_account
+from spl.name_service.utils import get_hashed_name, get_name_account
 from solana.keypair import Keypair
 
 

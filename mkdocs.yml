@@ -70,5 +70,12 @@ nav:
           - spl/token/constants.md
           - spl/token/instructions.md
           - spl/token/core.md
+      - Name Service:
+          - spl/name_service/intro.md
+          - spl/name_service/name_program.md
+      - Memo Program:
+          - spl/memo/intro.md
+          - spl/memo/memo_program.md
+
 extra_css:
   - css/mkdocstrings.css

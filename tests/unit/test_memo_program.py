@@ -1,7 +1,7 @@
 from based58 import b58encode
 
-from memo.constants import MEMO_PROGRAM
-from memo.memo_program import MemoParams, decode_memo_instruction, memo_instruction
+from spl.memo.constants import MEMO_PROGRAM
+from spl.memo.memo_program import MemoParams, decode_memo_instruction, memo_instruction
 from solana.keypair import Keypair
 
 
