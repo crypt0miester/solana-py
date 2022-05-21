@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/michaelhly/solana-py/master/docs/img/solana-py-logo.jpeg" width="25%" height="25%">
+    <img src="https://user-images.githubusercontent.com/77497858/169663120-71740787-38dc-43c3-bc6b-d4a783e46015.png" width="25%" height="25%">
 </div>
 
 ---
