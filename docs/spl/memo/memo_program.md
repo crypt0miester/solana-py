@@ -1,3 +1,3 @@
 # Memo Program
 
-:::memo.memo_program
+:::spl.memo.memo_program

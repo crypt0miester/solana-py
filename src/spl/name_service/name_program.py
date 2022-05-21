@@ -1,10 +1,10 @@
-"""Library to interface with system programs."""
+"""Library to interface with Name Service program."""
 from __future__ import annotations
 
 from typing import Any, NamedTuple, Optional
 
-from name_service._layouts import NAME_PROGRAM_INSTRUCTIONS_LAYOUT, InstructionType
-from name_service.constants import NAME_PROGRAM_ID, REQ_INITIAL_ACCOUNT_BUFFER
+from spl.name_service._layouts import NAME_PROGRAM_INSTRUCTIONS_LAYOUT, InstructionType
+from spl.name_service.constants import NAME_PROGRAM_ID, REQ_INITIAL_ACCOUNT_BUFFER
 from solana.publickey import PublicKey
 from solana.system_program import SYS_PROGRAM_ID
 from solana.transaction import AccountMeta, TransactionInstruction

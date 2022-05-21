@@ -1,9 +1,9 @@
-"""Memo program library."""
+"""Library to interface with Memo program."""
 from __future__ import annotations
 
 from typing import NamedTuple
 
-from memo.constants import MEMO_PROGRAM
+from spl.memo.constants import MEMO_PROGRAM
 from solana.publickey import PublicKey
 from solana.transaction import AccountMeta, TransactionInstruction
 
