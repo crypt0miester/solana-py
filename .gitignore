@@ -39,3 +39,6 @@ test-ledger/
 
 # env files
 env/
+
+# local test files
+testing.py
