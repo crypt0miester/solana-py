@@ -119,6 +119,18 @@ def freeze_authority() -> Keypair:
 
 
 @pytest.fixture(scope="session")
+def name_service_name() -> str:
+    """Arbitrary known Name Service to be used in name service tests."""
+    return "Name Service Test"
+
+
+@pytest.fixture(scope="session")
+def name_service_data() -> str:
+    """Arbitrary known Name Service data to be used in name service tests."""
+    return "Test"
+
+
+@pytest.fixture(scope="session")
 def unit_test_http_client() -> Client:
     """Client to be used in unit tests."""
     client = Client(commitment=Processed)

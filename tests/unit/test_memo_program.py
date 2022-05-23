@@ -1,8 +1,8 @@
 from based58 import b58encode
 
+from solana.keypair import Keypair
 from spl.memo.constants import MEMO_PROGRAM
 from spl.memo.memo_program import MemoParams, decode_memo_instruction, memo_instruction
-from solana.keypair import Keypair
 
 
 def test_memo():

@@ -1,12 +1,12 @@
 """Tests for the Memo program."""
 import pytest
 
-from spl.memo.constants import MEMO_PROGRAM
-from spl.memo.memo_program import MemoParams, memo_instruction
 from solana.keypair import Keypair
 from solana.rpc.api import Client
 from solana.rpc.commitment import Finalized
 from solana.transaction import Transaction
+from spl.memo.constants import MEMO_PROGRAM
+from spl.memo.memo_program import MemoParams, memo_instruction
 
 from .utils import assert_valid_response
 

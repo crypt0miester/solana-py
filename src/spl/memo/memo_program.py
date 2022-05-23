@@ -3,9 +3,9 @@ from __future__ import annotations
 
 from typing import NamedTuple
 
-from spl.memo.constants import MEMO_PROGRAM
 from solana.publickey import PublicKey
 from solana.transaction import AccountMeta, TransactionInstruction
+from spl.memo.constants import MEMO_PROGRAM
 
 
 # Instruction Params

@@ -36,6 +36,7 @@ test-ledger/
 
 # pytest coverage
 .coverage
+htmlcov/
 
 # env files
 env/

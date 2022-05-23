@@ -1,4 +1,6 @@
 """Unit tests for solana.system_program."""
+from solana.keypair import Keypair
+from spl.name_service.constants import REQ_INITIAL_ACCOUNT_BUFFER
 from spl.name_service.name_program import (
     CreateNameParams,
     DeleteNameParams,
@@ -14,7 +16,6 @@ from spl.name_service.name_program import (
     update_name,
 )
 from spl.name_service.utils import get_hashed_name, get_name_account
-from solana.keypair import Keypair
 
 
 def test_create():
@@ -25,7 +26,7 @@ def test_create():
         hashed_name=get_hashed_name("", "some_name12348364567"),
         lamports=123,
         owner_account=funding_account,
-        space=len(get_hashed_name("", "some_name12348364567")),
+        space=len(get_hashed_name("", "some_name12348364567")) + REQ_INITIAL_ACCOUNT_BUFFER,
     )
     assert decode_create_name(create_name(params)) == params
 

@@ -3,12 +3,12 @@ from __future__ import annotations
 
 from typing import Any, NamedTuple, Optional
 
-from spl.name_service._layouts import NAME_PROGRAM_INSTRUCTIONS_LAYOUT, InstructionType
-from spl.name_service.constants import NAME_PROGRAM_ID, REQ_INITIAL_ACCOUNT_BUFFER
 from solana.publickey import PublicKey
 from solana.system_program import SYS_PROGRAM_ID
 from solana.transaction import AccountMeta, TransactionInstruction
 from solana.utils.validate import validate_instruction_keys, validate_instruction_type
+from spl.name_service._layouts import NAME_PROGRAM_INSTRUCTIONS_LAYOUT, InstructionType
+from spl.name_service.constants import NAME_PROGRAM_ID
 
 
 # Instruction Params
@@ -75,7 +75,7 @@ def decode_create_name(instruction: TransactionInstruction) -> CreateNameParams:
         hashed_name=parsed_data.args.hashed_name,
         owner_account=instruction.keys[3].pubkey,
         lamports=parsed_data.args.lamports,
-        space=parsed_data.args.space - REQ_INITIAL_ACCOUNT_BUFFER,
+        space=parsed_data.args.space,
         name_program_id=instruction.program_id,
     )
 
@@ -123,7 +123,7 @@ def create_name(params: CreateNameParams) -> TransactionInstruction:
                 hashed_name_size=len(params.hashed_name),
                 hashed_name=params.hashed_name,
                 lamports=params.lamports,
-                space=params.space + REQ_INITIAL_ACCOUNT_BUFFER,
+                space=params.space,
             ),
         )
     )

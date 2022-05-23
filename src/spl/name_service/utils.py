@@ -1,7 +1,7 @@
 """Memo program utils."""
 from base64 import b64decode
 from hashlib import sha256
-from typing import Union
+from typing import Tuple, Union
 
 from solana.publickey import PublicKey
 from solana.rpc.api import Client
@@ -30,27 +30,33 @@ def get_name_account(
     return account
 
 
-def get_name_data(client: Client, account: PublicKey) -> Union[str, None]:
+def get_name_data(client: Client, account: PublicKey) -> Tuple[Union[str, None], Union[PublicKey, None]]:
     """Look up account data, deserialize it."""
     response = client.get_account_info(account, encoding="jsonParsed")
     value = response["result"]["value"]
     if value is None:
         print(f"{account} not found")
-        return None
-    data = value["data"][0]
-    data = b64decode(data)
-    data = data[REQ_INITIAL_ACCOUNT_BUFFER:]
-    return data.decode()
+        return None, None
+    encoded_data = value["data"][0]
+    raw_data = b64decode(encoded_data)
+    name_owner_raw = raw_data[32:64]
+    name_owner_public_key = PublicKey(name_owner_raw)
+    data = raw_data[REQ_INITIAL_ACCOUNT_BUFFER:]
+    return data.decode(), name_owner_public_key
 
 
-async def async_get_name_data(client: AsyncClient, account: PublicKey) -> Union[str, None]:
+async def async_get_name_data(
+    client: AsyncClient, account: PublicKey
+) -> Tuple[Union[str, None], Union[PublicKey, None]]:
     """Look up account data using async client, deserialize it."""
     response = await client.get_account_info(account, encoding="jsonParsed")
     value = response["result"]["value"]
     if value is None:
         print(f"{account} not found")
-        return None
-    data = value["data"][0]
-    data = b64decode(data)
-    data = data[REQ_INITIAL_ACCOUNT_BUFFER:]
-    return data.decode()
+        return None, None
+    encoded_data = value["data"][0]
+    raw_data = b64decode(encoded_data)
+    name_owner_raw = raw_data[32:64]
+    name_owner_public_key = PublicKey(name_owner_raw)
+    data = raw_data[REQ_INITIAL_ACCOUNT_BUFFER:]
+    return data.decode(), name_owner_public_key
