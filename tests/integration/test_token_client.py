@@ -8,7 +8,7 @@ from solana.utils.helpers import decode_byte_string
 from spl.token.client import Token
 from spl.token.constants import ASSOCIATED_TOKEN_PROGRAM_ID, TOKEN_PROGRAM_ID
 
-from .utils import AIRDROP_AMOUNT, assert_valid_response, OPTS
+from .utils import AIRDROP_AMOUNT, OPTS, assert_valid_response
 
 
 @pytest.mark.integration

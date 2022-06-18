@@ -1,7 +1,7 @@
 """Integration test utils."""
 
-from solana.rpc.types import RPCResponse, TxOpts
 from solana.rpc.commitment import Processed
+from solana.rpc.types import RPCResponse, TxOpts
 
 AIRDROP_AMOUNT = 10_000_000_000
 
