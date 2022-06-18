@@ -78,6 +78,12 @@ def stubbed_sender() -> Keypair:
 
 
 @pytest.fixture(scope="session")
+def stubbed_sender_compute_budget() -> Keypair:
+    """Arbitrary known account to be used as sender."""
+    return Keypair.from_seed(bytes([14] * PublicKey.LENGTH))
+
+
+@pytest.fixture(scope="session")
 def stubbed_sender_prefetched_blockhash() -> Keypair:
     """Arbitrary known account to be used as sender."""
     return Keypair.from_seed(bytes([9] * PublicKey.LENGTH))
